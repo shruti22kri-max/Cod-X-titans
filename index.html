@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SeaGuard | AI Underwater Sonar Object Detection & Ocean Cleanup</title>
+  <meta name="description" content="SeaGuard AI-powered Side-Scan Sonar object detection system to analyze underwater images and identify marine debris, crab pots, and submerged structures.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <!-- Outer SeaGuard Application Frame -->
+  <div class="seaguard-app-container">
+    <div class="seaguard-viewport-frame">
+      
+      <!-- Top Navigation Bar -->
+      <nav class="seaguard-navbar">
+        <div class="navbar-brand">
+          <a href="#" class="brand-logo">SeaGuard</a>
+        </div>
+        <ul class="navbar-menu">
+          <li><a href="#overview" class="nav-link active">Overview</a></li>
+          <li><a href="#impact" class="nav-link">Impact</a></li>
+          <li><a href="#metrics" class="nav-link">Metrics</a></li>
+          <li><a href="#volunteer" class="nav-link">Volunteer</a></li>
+          <li><a href="#programs" class="nav-link">Programs</a></li>
+          <li><a href="#sonar-detection" class="nav-link nav-highlight">Sonar AI</a></li>
+        </ul>
+        <div class="navbar-actions">
+          <a href="#sonar-detection" class="btn-nav-login">Log In</a>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="seaguard-hero-section" id="overview">
+        <div class="hero-center-content">
+          <div class="hero-title-container">
+            <h1 class="hero-giant-title">CLEANUP</h1>
+            <div class="floating-turtle-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
+                <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"></path>
+              </svg>
+            </div>
+          </div>
+          <p class="hero-subtitle">GLOBAL OCEAN CLEANUP</p>
+          <div class="hero-cta-group">
+            <a href="#dashboard-row" class="btn-hero-pill">View Dashboard</a>
+            <a href="#sonar-detection" class="btn-hero-pill sonar-btn">Launch Sonar Detector &darr;</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dashboard Grid: Today's Analytics & Heatmap (Matching Reference Image) -->
+      <section class="seaguard-dashboard-row" id="dashboard-row">
+        
+        <!-- Left Panel: Today's Analytics -->
+        <div class="glass-panel analytics-panel">
+          <div class="panel-header">
+            <h2 class="panel-title">Today's Analytics</h2>
+            <p class="panel-subtitle">Tracking every pound of waste to build cleaner oceans.</p>
+          </div>
+
+          <!-- Top Stats Row (12,345 tons / 245 species / 50 hotspots) -->
+          <div class="stats-metric-grid">
+            <div class="metric-card">
+              <div class="metric-number-row">
+                <span class="metric-val">12,345</span>
+                <span class="metric-unit">tons</span>
+              </div>
+              <div class="metric-label">Plastic Removed</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-number-row">
+                <span class="metric-val">245</span>
+                <span class="metric-unit">species</span>
+              </div>
+              <div class="metric-label">Marine Species Saved</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-number-row">
+                <span class="metric-val">50</span>
+                <span class="metric-unit">hotspots</span>
+              </div>
+              <div class="metric-label">Zones Restored</div>
+            </div>
+          </div>
+
+          <!-- Bottom Grid: Map Annotations Wave Graph + Hotspots List -->
+          <div class="analytics-sub-grid">
+            <!-- Map Annotations Chart -->
+            <div class="sub-card chart-card">
+              <div class="sub-card-header">
+                <span class="sub-title">Map Annotations</span>
+                <div class="chart-legend">
+                  <span class="legend-dot this-year"></span><span class="legend-text">This year</span>
+                  <span class="legend-dot last-year"></span><span class="legend-text">Last year</span>
+                  <div class="mini-search-box">
+                    <span>Search...</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mini-search-icon">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- SVG Wave Graph -->
+              <div class="svg-graph-container">
+                <div class="graph-y-axis">
+                  <span>H-4</span>
+                  <span>H-3</span>
+                </div>
+                <svg class="wave-chart-svg" viewBox="0 0 320 80" preserveAspectRatio="none">
+                  <!-- Grid line -->
+                  <line x1="0" y1="40" x2="320" y2="40" stroke="rgba(255,255,255,0.08)" stroke-dasharray="3,3" />
+                  <!-- Last year line -->
+                  <path d="M 0 55 Q 50 35 100 60 T 200 45 T 320 50" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.8" />
+                  <!-- This year line -->
+                  <path d="M 0 65 Q 60 70 120 40 T 220 20 T 320 35" fill="none" stroke="#38bdf8" stroke-width="2.2" />
+                  <!-- Area under curve -->
+                  <path d="M 0 65 Q 60 70 120 40 T 220 20 T 320 35 L 320 80 L 0 80 Z" fill="url(#blueGradient)" opacity="0.15" />
+                  <defs>
+                    <linearGradient id="blueGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#38bdf8" />
+                      <stop offset="100%" stop-color="transparent" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Hotspots List -->
+            <div class="sub-card hotspots-card">
+              <div class="sub-card-header">
+                <span class="sub-title">Hotspots</span>
+              </div>
+              <ul class="hotspots-list">
+                <li class="hotspot-item">
+                  <div class="hotspot-badge">H-1</div>
+                  <div class="hotspot-info">
+                    <span class="hotspot-name">Pacific Garbage Patch</span>
+                    <span class="hotspot-sub">3,250 tons removed</span>
+                  </div>
+                </li>
+                <li class="hotspot-item">
+                  <div class="hotspot-badge">H-2</div>
+                  <div class="hotspot-info">
+                    <span class="hotspot-name">Coral Triangle (18 Acts)</span>
+                    <span class="hotspot-sub">300+ species saved</span>
+                  </div>
+                </li>
+                <li class="hotspot-item">
+                  <div class="hotspot-badge">H-3</div>
+                  <div class="hotspot-info">
+                    <span class="hotspot-name">North Atlantic Ocean</span>
+                    <span class="hotspot-sub">1,120 tons removed</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Panel: Heatmap (World Map & Sonar Coordinates) -->
+        <div class="glass-panel heatmap-panel">
+          <div class="panel-header heatmap-header">
+            <div>
+              <h2 class="panel-title">Heatmap</h2>
+              <p class="panel-subtitle">Where We're Making Waves</p>
+            </div>
+            <a href="#sonar-detection" class="btn-view-map">View Full Map</a>
+          </div>
+
+          <!-- World Map SVG with Glowing Pins -->
+          <div class="world-map-wrapper">
+            <svg class="world-map-svg" viewBox="0 0 1000 500">
+              <!-- Simplified stylized world continents -->
+              <g fill="#ffffff" fill-opacity="0.95" stroke="none">
+                <!-- North America -->
+                <path d="M150,80 Q220,70 280,100 Q320,130 300,190 Q270,220 220,240 Q180,220 140,160 Q120,110 150,80 Z" />
+                <!-- South America -->
+                <path d="M260,250 Q310,270 330,330 Q310,400 280,440 Q250,420 240,350 Q230,290 260,250 Z" />
+                <!-- Europe -->
+                <path d="M450,90 Q520,80 550,120 Q540,160 480,170 Q440,150 430,120 Q440,100 450,90 Z" />
+                <!-- Africa -->
+                <path d="M460,180 Q540,180 570,240 Q580,320 520,380 Q470,360 440,280 Q440,210 460,180 Z" />
+                <!-- Asia -->
+                <path d="M560,90 Q720,70 820,120 Q860,200 780,260 Q700,280 620,240 Q570,200 560,140 Z" />
+                <!-- Australia -->
+                <path d="M750,320 Q840,310 860,370 Q820,420 760,400 Q730,360 750,320 Z" />
+              </g>
+              <!-- Glowing Red Hotspot Markers -->
+              <g class="hotspot-markers">
+                <!-- Pacific -->
+                <circle cx="210" cy="180" r="5" fill="#f43f5e" class="pulse-pin" />
+                <circle cx="210" cy="180" r="10" fill="#f43f5e" opacity="0.3" class="pulse-ring" />
+                <!-- Atlantic -->
+                <circle cx="380" cy="200" r="5" fill="#f43f5e" class="pulse-pin" />
+                <!-- Indian Ocean / Coral Triangle -->
+                <circle cx="670" cy="280" r="5" fill="#f43f5e" class="pulse-pin" />
+                <circle cx="670" cy="280" r="11" fill="#f43f5e" opacity="0.3" class="pulse-ring" />
+                <!-- North Pacific -->
+                <circle cx="780" cy="190" r="5" fill="#f43f5e" class="pulse-pin" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================== -->
+      <!-- AI SIDE-SCAN SONAR OBJECT DETECTION SECTION (CORE PROTOTYPE) -->
+      <!-- ==================================================================== -->
+      <section class="seaguard-sonar-section" id="sonar-detection">
+        
+        <!-- Sonar Header -->
+        <div class="sonar-section-header">
+          <div class="header-badge">
+            <span class="status-indicator"></span>
+            <span id="modelModeBadge">AI MODEL READY &bull; MOCK/DEMO MODE</span>
+          </div>
+          <h2 class="sonar-main-title">Underwater Sonar Object Detection</h2>
+          <p class="sonar-subtitle">Multi-target AI for Small Objects, Unknown Anomalies, Ghost Nets, and Major Heavy Structures (Ships, Rods, Pipelines).</p>
+        </div>
+
+        <!-- Alert Notification Banner -->
+        <div id="errorBanner" class="alert-banner hidden" role="alert">
+          <div class="alert-icon">⚠️</div>
+          <div class="alert-content">
+            <strong id="errorTitle">Notice</strong>
+            <p id="errorMessage">An error occurred.</p>
+          </div>
+          <button id="closeErrorBtn" class="close-alert-btn" aria-label="Dismiss alert">&times;</button>
+        </div>
+
+        <!-- Quick Sample Presets -->
+        <div class="sample-presets-bar">
+          <span class="preset-label">Test Samples:</span>
+          <div class="preset-chips">
+            <button class="sample-chip" data-sample="small_object" id="sampleSmallObjectBtn">
+              <span class="chip-dot cyan"></span>
+              <span>Sample 1: Small Object Detection</span>
+            </button>
+            <button class="sample-chip" data-sample="unknown_anomaly" id="sampleAnomalyBtn">
+              <span class="chip-dot purple"></span>
+              <span>Sample 2: Unknown Anomaly Detection</span>
+            </button>
+            <button class="sample-chip" data-sample="ghost_net" id="sampleGhostNetBtn">
+              <span class="chip-dot rose"></span>
+              <span>Sample 3: Ghost Net Detection</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 1. Sonar Image Upload Card (Initial State) -->
+        <div id="uploadSection" class="glass-panel upload-panel">
+          <label for="imageFileInput" id="dropZone" class="drop-zone" tabindex="0" role="button" aria-label="Drop sonar image here or click to browse">
+            <div class="drop-zone-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+            </div>
+            <h3 class="drop-zone-title">Upload Sonar Image</h3>
+            <p class="drop-zone-desc">Drag and drop your side-scan sonar image here, or click anywhere to browse from your device</p>
+            
+            <div class="btn btn-primary upload-btn" id="uploadTriggerBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="16"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+              </svg>
+              Choose Sonar Image
+            </div>
+            <input type="file" id="imageFileInput" accept="image/*,.jpg,.jpeg,.png,.webp,.bmp,.tif,.tiff,.jfif" class="visually-hidden">
+            
+            <div class="format-tags">
+              <span class="format-tag">JPG</span>
+              <span class="format-tag">PNG</span>
+              <span class="format-tag">WEBP</span>
+              <span class="format-tag">BMP</span>
+              <span class="size-limit">&bull; Max 25 MB</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- 2. Sonar Preview & Results Workspace (After image is selected) -->
+        <div id="previewSection" class="sonar-workspace-grid hidden">
+          
+          <!-- Left Column: Visual Viewport (Sonar Preview Image & Canvas Bounding Boxes) -->
+          <div class="glass-panel viewport-panel">
+            <div class="viewport-header">
+              <div class="viewport-title-group">
+                <span class="pulse-dot"></span>
+                <h3 class="viewport-title" id="viewportStatusText">Sonar Image Preview</h3>
+              </div>
+              <div class="viewport-meta">
+                <span id="fileMetaBadge" class="meta-badge">-- &times; -- px</span>
+                <button id="reuploadBtn" class="btn btn-ghost btn-sm" title="Upload a different sonar image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon-sm">
+                    <polyline points="1 4 1 10 7 10"></polyline>
+                    <polyline points="23 20 23 14 17 14"></polyline>
+                    <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path>
+                  </svg>
+                  New Image
+                </button>
+              </div>
+            </div>
+
+            <!-- Sonar Viewport Stage -->
+            <div class="image-stage-wrapper" id="imageStageWrapper">
+              <!-- Loading Overlay with Acoustic Radar Scanner -->
+              <div id="loadingOverlay" class="loading-overlay hidden" aria-live="polite">
+                <div class="sonar-scanner">
+                  <div class="scanner-sweep"></div>
+                  <div class="scanner-ring ring-1"></div>
+                  <div class="scanner-ring ring-2"></div>
+                  <div class="scanner-ring ring-3"></div>
+                  <div class="scanner-crosshair-h"></div>
+                  <div class="scanner-crosshair-v"></div>
+                </div>
+                <p class="loading-message">Analyzing sonar image...</p>
+                <span class="loading-subtext">Scanning acoustic reflections & shadow signatures</span>
+              </div>
+
+              <!-- Sonar Image and Bounding Box Canvas -->
+              <div class="canvas-container" id="canvasContainer">
+                <img id="sonarPreviewImg" alt="Side-Scan Sonar Preview" class="sonar-display-img">
+                <canvas id="detectionCanvas" class="detection-overlay-canvas"></canvas>
+              </div>
+            </div>
+
+            <!-- Action Button Toolbar -->
+            <div id="preInferenceToolbar" class="action-toolbar">
+              <button id="detectObjectsBtn" class="btn btn-primary btn-lg detect-action-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+                Detect Objects
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: Detection Results Section -->
+          <div class="glass-panel results-panel" id="resultsSection">
+            <div class="results-header">
+              <h3 class="results-title">Detection Results</h3>
+              <span id="resultsCountBadge" class="badge badge-count">Ready</span>
+            </div>
+
+            <!-- Idle State before "Detect Objects" is clicked -->
+            <div id="resultsIdleState" class="results-empty-state">
+              <div class="empty-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 16v-4"></path>
+                  <path d="M12 8h.01"></path>
+                </svg>
+              </div>
+              <p class="empty-text">Click <strong>"Detect Objects"</strong> to analyze this sonar scan for underwater targets.</p>
+            </div>
+
+            <!-- "No objects detected." State -->
+            <div id="noObjectsState" class="results-empty-state hidden">
+              <div class="empty-icon-box success">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <h4 class="no-objects-heading">No objects detected.</h4>
+              <p class="empty-text">The model analyzed the acoustic return and found no significant targets or debris signatures.</p>
+            </div>
+
+            <!-- Detections List -->
+            <div id="detectionsList" class="detections-list hidden">
+              <!-- Dynamically populated detection cards -->
+            </div>
+
+            <!-- Collapsible Raw JSON Response Inspector -->
+            <div id="jsonInspectorWrapper" class="json-inspector-wrapper hidden">
+              <button id="toggleJsonBtn" class="toggle-json-btn">
+                <span>API Response JSON</span>
+                <span class="toggle-chevron" id="jsonChevron">&#9662;</span>
+              </button>
+              <pre id="rawJsonResponse" class="raw-json-code hidden"></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="seaguard-footer">
+        <p>&copy; 2026 SeaGuard Marine Initiative &bull; AI Side-Scan Sonar Prototype &bull; Standard API: <code>POST /predict</code></p>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
